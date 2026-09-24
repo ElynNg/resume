@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon-512.png" type="image/png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
     <title>Elyn Nguyen | 융</title>
@@ -13,299 +15,259 @@
 <body>
     <div class="container">
         <nav id="header">
-            <div class="nav-logo">
-                <p class="nav-name">Elyn</p>
-                <span>.</span>
-            </div>
+            <a href="#top" class="nav-logo">
+                <img src="images/favicon-512.png" alt="Elyn Nguyen">
+                <span class="nav-name">Elyn Nguyen</span>
+            </a>
 
             <div class="nav-menu" id="myNavMenu">
                 <ul class="nav-menu-list">
                     <li class="nav-list">
-                        <a href="#home" class="nav-link">Home</a>
-                        <div class="circle"></div>
+                        <a href="#about" class="nav-link" data-i18n="nav.profile">Profile</a>
                     </li>
                     <li class="nav-list">
-                        <a href="#about" class="nav-link">About</a>
-                        <div class="circle"></div>
+                        <a href="#toolkit" class="nav-link" data-i18n="nav.toolkit">Toolkit</a>
                     </li>
                     <li class="nav-list">
-                        <a href="#project" class="nav-link">Projects</a>
-                        <div class="circle"></div>
+                        <a href="#project" class="nav-link" data-i18n="nav.work">Work</a>
                     </li>
                     <li class="nav-list">
-                        <a href="#contact" class="nav-link">Contact</a>
-                        <div class="circle"></div>
+                        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
                     </li>
                 </ul>
             </div>
 
-            <div class="nav-button">
-                <a href="/Documents/NgocDungNguyen_SoftwareDeveloper.pdf" download><button class="btn">Download CV <i class="uil uil-import"></i></button></a>
+            <div class="nav-actions">
+                <div class="lang-switch" role="group" aria-label="Language">
+                    <button type="button" data-lang="en" title="English">EN</button>
+                    <button type="button" data-lang="ko" title="한국어">KO</button>
+                    <button type="button" data-lang="vi" title="Tiếng Việt">VI</button>
+                </div>
+
+                <div class="nav-button">
+                    <a href="Documents/NgocDungNguyen_FullStackDeveloper.pdf" download class="btn btn-primary" data-i18n="cv.download">Download CV</a>
+                </div>
             </div>
 
-            <div class="nav-menu-btn">
-                <i class="uil uil-bars" onclick="showMenu()"></i>
+            <div class="nav-menu-btn" id="myNavMenuBtn" onclick="showMenu()">
+                <span></span><span></span><span></span>
             </div>
         </nav>
 
-        <main class="wrapper">
-            <section class="featured-box" id="home">
-                <div class="featured-text">
-                    <div class="featured-text-card">
-                        <span>Elyn</span>
+        <main class="wrapper" id="top">
+            <section class="hero" id="home">
+                <canvas id="hero-canvas"></canvas>
+
+                <div>
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        <span data-i18n="hero.badge">Open to opportunities</span>
+                    </div>
+                    <h1>
+                        <span>Elyn Nguyen</span>
+                        <span class="accent"><span data-i18n="hero.prefix">I&rsquo;m a </span><span class="type-text">Software Developer</span><span class="type-caret">&nbsp;</span></span>
+                    </h1>
+                    <p class="hero-info" data-i18n="hero.info">Software Developer at FPT, building MES systems with C# and WinForms &mdash; and shipping my own full-stack projects with Java, Spring Boot, and React/Next.js.</p>
+
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary" data-i18n="hero.contact">Get in touch</a>
+                        <a href="#project" class="btn btn-secondary" data-i18n="hero.work">See the work</a>
                     </div>
 
-                    <div class="featured-name">
-                        <p>I'm a <span class="type-text">Software Developer</span></p>
-                    </div>
-
-                    <div class="featured-text-info">
-                        <p>Software Developer at FPT, building full-stack web applications with Java, Spring Boot, and React/Next.js.</p>
-                    </div>
-
-                    <div class="featured-text-btn">
-                        <a href="#contact"><button class="btn blue-btn">Contact Me</button></a>
-                    </div>
-
-                    <div class="social-icons">
-                        <div class="icon"><a href="https://www.linkedin.com/in/elynng1489/" target="_blank"><i class="uil uil-linkedin-alt"></i></a></div>
-                        <div class="icon"><a href="https://github.com/ElynNg" target="_blank"><i class="uil uil-github-alt"></i></a></div>
-                    </div>
-                </div>
-
-                <div class="featured-image">
-                    <div class="image">
-                        <img src="images/IMG_20240816_235917.jpg" alt="avatar">
+                    <div class="hero-socials">
+                        <a href="https://www.linkedin.com/in/elynng1489/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+                        <a href="https://github.com/ElynNg" target="_blank" rel="noopener">GitHub &#8599;</a>
                     </div>
                 </div>
 
-                <div class="scroll-icon-box">
-                    <a href="#about" class="scroll-btn">
-                        <i class="uil uil-arrow-down"></i>
-                    </a>
-                </div>
-
-
+                <figure class="hero-figure">
+                    <img src="images/IMG_20240816_235917.jpg" alt="Elyn Nguyen">
+                </figure>
             </section>
 
+            <div class="scroll-btn">
+                <a href="#about">&#8595;</a>
+            </div>
+
             <section class="section" id="about">
-                <div class="top-header">
-                    <h1>About Me</h1>
+                <div class="section-kicker" data-i18n="profile.kicker">01 &middot; Profile</div>
+                <hr class="section-rule">
+
+                <div class="blueprint">
+                    <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                    <header class="datasheet-header">
+                        <span class="datasheet-title" data-i18n="profile.title">Profile &mdash; Engineering Data</span>
+                        <span class="datasheet-meta">ELYN-01</span>
+                        <span class="datasheet-meta">Rev 2026</span>
+                        <span class="datasheet-meta">Sheet 01</span>
+                    </header>
+                    <div class="datasheet-grid">
+                        <div class="datasheet-cell">
+                            <div class="datasheet-label" data-i18n="profile.projects">01 &middot; Projects shipped</div>
+                            <div class="datasheet-value"><span data-count-to="9" data-pad="2">00</span></div>
+                            <div class="datasheet-sub" data-i18n="profile.projectsSub">From enterprise systems to personal builds</div>
+                        </div>
+                        <div class="datasheet-cell">
+                            <div class="datasheet-label" data-i18n="profile.tech">02 &middot; Technologies</div>
+                            <div class="datasheet-value"><span data-count-to="20" data-pad="2">00</span><span style="color:var(--color-accent-700)">+</span></div>
+                            <div class="datasheet-sub" data-i18n="profile.techSub">Across front end, back end, data and cloud</div>
+                        </div>
+                        <div class="datasheet-cell">
+                            <div class="datasheet-label" data-i18n="profile.role">03 &middot; Primary role</div>
+                            <div class="datasheet-value text" data-i18n="profile.roleValue">Software<br>Developer</div>
+                            <div class="datasheet-sub" data-i18n="profile.roleSub">Enterprise systems &amp; web apps</div>
+                        </div>
+                        <div class="datasheet-cell">
+                            <div class="datasheet-label" data-i18n="profile.focus">04 &middot; Focus</div>
+                            <div class="datasheet-value text">C# / WinForms<br>Java / React</div>
+                            <div class="datasheet-sub" data-i18n="profile.focusSub">MES at work, full-stack web on my own</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="row">
-                    <div class="col">
-                        <div class="about-info">
-                            <h3>My Introduction</h3>
-                            <p>Full-stack developer with hands-on experience in Java, Spring Boot, React, Next.js, Node.js, and MySQL.
-                                I learn by working through real-world tasks — breaking down requirements, mapping data flow across layers,
-                                and identifying how each component fits into the overall system before writing code. I also bring cross-cultural
-                                collaboration experience as a Bridge Engineer between Korean and Vietnamese teams, ensuring clear technical
-                                communication and aligned delivery.
-                                </p>
+                <p class="about-lede" data-i18n="profile.lede">Software developer with hands-on experience in C#, WinForms, Java, Spring Boot, React, and Next.js. At FPT I build MES (Manufacturing Execution System) software; outside work I plan, build, and deploy my own projects end to end. I learn by working through real-world tasks &mdash; breaking down requirements, mapping data flow across layers, and identifying how each component fits into the overall system before writing code.</p>
 
-                                <div class="about-btn">
-                                    <a href="Documents/NgocDungNguyen_FullStackDeveloper.pdf" download><button class="btn">Check my resume!! </button></a>
-                                </div>
+                <div class="about-btn">
+                    <a href="Documents/NgocDungNguyen_FullStackDeveloper.pdf" download class="btn btn-secondary" data-i18n="profile.resume">Check my resume</a>
+                </div>
+            </section>
+
+            <section class="section" id="toolkit">
+                <div class="section-kicker" data-i18n="toolkit.kicker">02 &middot; Toolkit</div>
+                <hr class="section-rule">
+
+                <div id="skills-area">
+                    <div class="skills-box blueprint">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <h3 data-i18n="toolkit.languages">Languages</h3>
+                        <div class="skills-list">
+                            <span class="tag">Java</span>
+                            <span class="tag">C#</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
                         </div>
                     </div>
 
-                    <div class="col" id="skills-area">
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Languages</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>Java</span>
-                                <span>C#</span>
-                                <span>JavaScript</span>
-                                <span>TypeScript</span>
-                                <span>SQL</span>
-                                <span>HTML</span>
-                                <span>CSS</span>
-                            </div>
+                    <div class="skills-box blueprint">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <h3 data-i18n="toolkit.frameworks">Frameworks &amp; Libraries</h3>
+                        <div class="skills-list">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">JPA</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">WinForms</span>
+                            <span class="tag">ASP.NET MVC</span>
+                            <span class="tag">Chart.js</span>
                         </div>
+                    </div>
 
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Frameworks & Libraries</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>Spring Boot</span>
-                                <span>JPA</span>
-                                <span>React</span>
-                                <span>Next.js</span>
-                                <span>Express.js</span>
-                                <span>ASP.NET MVC</span>
-                            </div>
+                    <div class="skills-box blueprint">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <h3 data-i18n="toolkit.database">Database</h3>
+                        <div class="skills-list">
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MSSQL</span>
+                            <span class="tag">Oracle DB</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Flyway</span>
                         </div>
+                    </div>
 
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Database</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>MySQL</span>
-                                <span>MSSQL</span>
-                                <span>Oracle DB</span>
-                                <span>PostgreSQL</span>
-                                <span>MongoDB</span>
-                            </div>
-                        </div>
-
-                        <div class="skills-box">
-                            <div class="skills-header">
-                                <h3>Tools & DevOps</h3>
-                            </div>
-                            <div class="skills-list">
-                                <span>Maven, Gradle</span>
-                                <span>AWS</span>
-                                <span>GitHub, Bitbucket, Bamboo</span>
-                                <span>IntelliJ IDEA, VS Code, Postman, DBeaver</span>
-                            </div>
+                    <div class="skills-box blueprint">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <h3 data-i18n="toolkit.tools">Tools &amp; DevOps</h3>
+                        <div class="skills-list">
+                            <span class="tag">Maven, Gradle</span>
+                            <span class="tag">AWS</span>
+                            <span class="tag">Docker, Nginx</span>
+                            <span class="tag">GitHub Actions, Bitbucket Pipelines, Bamboo</span>
+                            <span class="tag">IntelliJ IDEA, VS Code, Postman, DBeaver</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section class="section" id="project">
-                <div class="top-header">
-                    <h1>Work Experienced</h1>
+                <div class="section-kicker" data-i18n="work.kicker">03 &middot; Work Experience</div>
+                <hr class="section-rule">
+
+                <div class="tag-filter" id="tag-filter">
+                    <span class="tag-filter-label" data-i18n="work.filter">Filter by tech</span>
+                    <button type="button" class="tag is-active" data-filter="all" data-i18n="work.all">All</button>
+                    <button type="button" class="tag" data-filter="Java">Java</button>
+                    <button type="button" class="tag" data-filter="Spring Boot">Spring Boot</button>
+                    <button type="button" class="tag" data-filter="React">React</button>
+                    <button type="button" class="tag" data-filter="Next.js">Next.js</button>
+                    <button type="button" class="tag" data-filter="C#">C#</button>
+                    <button type="button" class="tag" data-filter="Oracle">Oracle</button>
+                    <button type="button" class="tag" data-filter="MSSQL">MSSQL</button>
+                    <button type="button" class="tag" data-filter="Docker">Docker</button>
                 </div>
 
-                <div class="project-container">
-
-                    <div class="project-box">
-                        <i class="uil uil-shield-check"></i>
-                        <h2>SCP</h2>
-                        <h4>Legacy Upgrade & Data Encryption/Decryption</h4>
-                        <div class="details">
-                            <label>Role: Backend Developer</label>
-                            <ul>
-                                <li>Upgraded a legacy project from Java 7 to Java 25 and migrated the framework to Spring Boot 4.0, resolving deprecated API, JPMS module, and dependency compatibility issues.</li>
-                                <li>Wrote test cases and verified system behavior to ensure stability after migration.</li>
-                                <li>Prepared documentation and diagrams to guide the team through the upgrade process.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-box">
-                        <i class="uil uil-restaurant"></i>
-                        <h2>Cafeteria Operations</h2>
-                        <h4>Cafeteria Operations Management System</h4>
-                        <div class="details">
-                            <label>Role: Full-stack Developer</label>
-                            <ul>
-                                <li>Built dynamic web pages for menu management, pre-orders, and staff coordination using Spring Boot, JPA, Query Factory, React, KendoUI, and MySQL.</li>
-                                <li>Gained hands-on experience with AWS cloud deployment and CI/CD across development and production environments.</li>
-                                <li>Acted as a bridge between Korean and Vietnamese teams for technical communication and task clarification.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-box">
-                        <i class="uil uil-heart-medical"></i>
-                        <h2>Healthcare Admin</h2>
-                        <h4>Healthcare Admin System</h4>
-                        <div class="details">
-                            <label>Role: Full-stack Developer</label>
-                            <ul>
-                                <li>Built admin dashboard pages (FAQ, user instructions, daily video scheduling, reward point settings) for a healthcare app serving elderly users.</li>
-                                <li>Developed backend APIs to support account management, health video content, and usage monitoring (meals, medication, steps, blood pressure).</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="project-box">
-                        <i class="uil uil-create-dashboard"></i>
-                        <h2>Research Operation</h2>
-                        <h4>Research Operation Interface</h4>
-                        <div class="details">
-                            <label>Role: Full-stack Developer</label>
-                            <ul>
-                                <li>Analyzed database tables, existing codebase, and application flow to plan the implementation strategy for research project dashboards.</li>
-                                <li>Guided a teammate through development tasks and reviewed code for quality and consistency.</li>
-                                <li>Managed task progress to help ensure timely delivery of project milestones.</li>
-                            </ul>
-                        </div>
-                    </div>
-                  </div>
+                <!-- Filled from projects.js by main.js -->
+                <div class="project-container" id="project-list"></div>
+                <p class="result-note" id="result-note"></p>
             </section>
 
             <section class="section" id="contact">
-                <div class="top-header">
-                    <h1>Get in touch</h1>
-                    <span>Contact me here!!</span>
-                </div>
+                <div class="section-kicker" data-i18n="contact.kicker">04 &middot; Get in Touch</div>
+                <hr class="section-rule">
 
-                <div class="row">
-                    <div class="col">
-                        <div class="contact-info">
-                            <h2>Find me</h2>
-                            <p><a href="mailto:ndym1489@gmail.com"><i class="uil uil-envelope"></i> Email: <span>elynng.work@gmail.com</span></a></p>
-                            <p><a href="tel:+821084499481"><i class="uil uil-phone-volume"></i> Tel: <span> +82 10 8449 9481</span></a></p>
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="contact-heading" data-i18n="contact.heading">Let's build<br>something</h2>
+                        <div class="contact-links">
+                            <a href="mailto:ndym1489@gmail.com">
+                                <span class="label" data-i18n="contact.email">Email</span>
+                                <span class="value">jadeon.4work@gmail.com</span>
+                            </a>
+                            <a href="tel:+821084499481">
+                                <span class="label" data-i18n="contact.tel">Tel</span>
+                                <span class="value">+82 10 8449 9481</span>
+                            </a>
+                        </div>
+                        <div class="hero-socials" style="margin-top:14px;">
+                            <a href="https://www.linkedin.com/in/elynng1489/" target="_blank" rel="noopener">LinkedIn &#8599;</a>
+                            <a href="https://github.com/ElynNg" target="_blank" rel="noopener">GitHub &#8599;</a>
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="form-control">
-                            <div class="form-inputs">
-                                <input type="text" class="input-field" id="sender-name" placeholder="Enter your name"/>
-                                <input type="text" class="input-field" id="sender-email"placeholder="Enter your email"/>
-                            </div>
-
-                            <div class="text-area">
-                                <textarea id="message" placeholder="Enter you message"></textarea>
-                            </div>
+                    <div class="contact-card blueprint">
+                        <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+                        <div class="form-inputs">
+                            <div class="field"><label for="sender-name" data-i18n="form.name">Name</label><input class="input" type="text" id="sender-name" placeholder="Your name" data-i18n-placeholder="form.namePh"></div>
+                            <div class="field"><label for="sender-email" data-i18n="form.email">Email</label><input class="input" type="email" id="sender-email" placeholder="you@example.com"></div>
                         </div>
-                    </div>
-                </div>
-
-                <div class="row" id="form-button-area">
-                    <div class="form-button">
-                        <button type="submit" class="btn" onclick="sendMail()">Send me<i class="uil uil-message"></i></button>
+                        <div class="field text-area"><label for="message" data-i18n="form.message">Message</label><textarea class="input" id="message" placeholder="Tell me about the role or project&hellip;" data-i18n-placeholder="form.messagePh"></textarea></div>
+                        <div id="form-button-area">
+                            <button type="button" class="btn btn-primary btn-block" onclick="sendMail()" data-i18n="form.send">Send message</button>
+                        </div>
                     </div>
                 </div>
             </section>
-
         </main>
 
         <footer>
-            <div class="top-footer">
-                <p>Elyn Nguyen .</p>
-            </div>
-
-            <div class="middle-footer">
-                <ul class="footer-menu">
-                    <li class="footer-menu-list">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li class="footer-menu-list">
-                        <a href="#about">About</a>
-                    </li>
-                    <li class="footer-menu-list">
-                        <a href="#project">Projects</a>
-                    </li>
-                    <li class="footer-menu-list">
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="bottom-footer">
-                <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Elyn Nguyen</a> - All rights reserved</p>
+            <div class="footer-inner">
+                <span class="footer-brand" data-i18n="footer.brand">Elyn Nguyen &middot; Software Developer</span>
+                <span data-i18n="footer.rights">&copy; 2026 &mdash; All rights reserved</span>
             </div>
         </footer>
     </div>
 
-
-    <!--ScrollReveal-->
-    <script src="https://unpkg.com/scrollreveal"></script>
     <!--Typed.js-->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!--Script-->
+    <script src="translations.js"></script>
+    <script src="projects.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
